@@ -1,0 +1,161 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mitizians</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
+            $('.header').load("header.html");
+            $('.footer').load("footer.html");
+        });
+
+     
+    </script>
+</head>
+
+<body>
+    <div class="header "></div>
+    <div class="heading2 img2">
+         
+        <div class="container1  "  >
+                <h2 style="color: skyblue" ><center> Registration.</center> </h2>
+                <div class="row centered-form">
+                        <div class="col-md-6 offset-md-3"></div>
+                      
+                    <form method="POST" action="" onsubmit=" return checkForm()">
+                        <div class="form-group">
+                            <label for="roll"><b style="color: yellowgreen">University roll no:</b></label>
+                            <input type="number" class="form-control" id="roll" value="" name="roll">
+                            <p style="display: none" class="text-danger" id="roll_error"> *Please enter your rollno. </p> 
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="fname"><b style="color: yellowgreen">Username:</b></label>
+                            <input type="text" class="form-control" id="fname" value="" name="fname">
+                            <p style="display: none" class="text-danger" id="fname_error"> *Please enter your first name. </p> 
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="email"><b style="color: yellowgreen">Email address:</b></label>
+                            <input type="email" class="form-control" id="email" name="email">
+                            <p style="display: none" class="text-danger" id="email_error"> *Please enter your email. </p> 
+                        </div>
+                        <div class="form-group">
+                            <label for="mob"><b style="color: yellowgreen">Contact number:</b></label>
+                            <input type="number" class="form-control" id="no" name="no">
+                            <p style="display: none" class="text-danger" id="no_error"> *Please enter your contact no. </p> 
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd"><b style="color: yellowgreen">Password:</b></label>
+                            <input type="password" class="form-control" id="pwd" name="pwd">
+                            <p style="display: none" class="text-danger"   id="pwd_error"> *Please enter your password. </p>                       
+                        </div>
+                        <div class="form-group">
+                            <label for="cpwd"><b style="color: yellowgreen">Confirm password:</b></label>
+                            <input type="password" class="form-control" id="cpwd" name="cpwd">
+                            <p style="display: none" class="text-danger"   id="cpwd_error"> *Please re-enter your password</p>
+                        </div>
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <a href="login1.html">Already register click here</a>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>                                  
+    </div>
+
+
+
+   
+
+
+
+    <script>
+        function checkForm() {
+            var flag = false;
+            if (document.getElementById("roll").value == "") {
+                document.getElementById("roll_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("roll_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("fname").value == "") {
+                document.getElementById("fname_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("fname_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("lname").value == "") {
+                document.getElementById("lname_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("lname_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("email").value == "") {
+                document.getElementById("email_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("email_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("no").value == "") {
+                document.getElementById("no_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("no_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("pwd").value == "") {
+                document.getElementById("pwd_error").style.display = "";
+                flag = false;
+            }
+            else {
+                document.getElementById("pwd_error").style.display = "none";
+                flag = true;
+            }
+            if (document.getElementById("cpwd").value != "") {
+                if (document.getElementById("pwd").value != document.getElementById("cpwd").value) {
+                    document.getElementById("cpwd_error").innerHTML="Password did not match";
+                    document.getElementById("cpwd_error").style.display="";
+                    flag = false;
+                }
+                else{
+                    document.getElementById("cpwd_error").style.display = "none";
+                    flag = true;
+                }
+            }
+            else if (document.getElementById("cpwd").value == "") {
+                document.getElementById("cpwd_error").style.display = "";
+                document.getElementById("cpwd_error").innerHTML="*Please re-enter your password";  
+                flag = false;              
+            }
+            
+            return flag;
+            
+        }
+
+    </script> 
+    
+     <div class="footer"></div>
+
+</body>
+
+</html>
